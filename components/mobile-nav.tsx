@@ -17,7 +17,6 @@ import {
   MessageSquare,
   Settings,
 } from "lucide-react";
-import { useState } from "react";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/" },
@@ -38,12 +37,7 @@ const bottomNavItems = [
   { icon: Settings, label: "Settings", href: "/settings" },
 ];
 
-interface LinkProps {
-  isOpen?: boolean;
-}
-
-export const MobileNav = ({ isOpen = false }: LinkProps) => {
-  const [open, setOpen] = useState<boolean>(false);
+export function MobileNav() {
   const pathname = usePathname();
 
   return (
@@ -63,7 +57,6 @@ export const MobileNav = ({ isOpen = false }: LinkProps) => {
           <Link
             key={item.href}
             href={item.href}
-            onClick={() => setOpen(false)}
             className={`flex items-center space-x-2 px-2 py-3 rounded-lg mb-1 ${
               pathname === item.href
                 ? "bg-purple-100 text-purple-600"
@@ -85,7 +78,6 @@ export const MobileNav = ({ isOpen = false }: LinkProps) => {
           <Link
             key={item.href}
             href={item.href}
-            onClick={() => setOpen(false)}
             className="flex items-center space-x-2 px-2 py-3 rounded-lg text-gray-700 hover:bg-gray-100"
           >
             <item.icon className="h-5 w-5" />
@@ -95,4 +87,4 @@ export const MobileNav = ({ isOpen = false }: LinkProps) => {
       </div>
     </div>
   );
-};
+}
