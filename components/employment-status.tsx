@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
 export function EmploymentStatus() {
   const statuses = [
     { label: "Permanent", count: 324, percentage: 48, color: "#8b5cf6" },
     { label: "Contract", count: 121, percentage: 32, color: "#10b981" },
     { label: "Probation", count: 72, percentage: 20, color: "#ef4444" },
-  ]
+  ];
 
   return (
     <div className="space-y-4">
       <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-        {statuses.map((status, index) => (
+        {statuses.map((status) => (
           <div
             key={status.label}
             className="h-full float-left"
@@ -31,6 +31,5 @@ export function EmploymentStatus() {
         ))}
       </div>
     </div>
-  )
+  );
 }
-
